@@ -4,11 +4,37 @@
 	<head>
 		<title>Rango</title>
 	</head>
+
 	<body>
 		<h1>Rango says...</h1>
+		<div>hey there partner!<br/> </div>
+
 		<div>
-			hey there partner! <br/>
-			<strong>{{ boldmessage }}</strong><br/>
+		{% if categories %}
+		<head>
+			<strong> <h2> Most liked catgories </h2></strong></head>
+		<ul>
+			{% for category in categories %}
+				<li> 
+					<a href="/rango/category/{{category.slug}}">{{category.name}} </a></li>
+			{% endfor %}
+		</ul>
+
+		{% else %}
+			<strong>There are no categories present.</strong>
+		{% endif %}
+		</div>
+
+		<div>
+		{% if pages %}
+		<head>
+			<strong> <h2> Most viewed pages </h2></strong></head>
+		<ul>
+			{% for page in pages %}
+				<li> <a href = "{{page.url}}"> {{page.title}}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
 		</div>
 		<div>
 			<a href="/rango/about/">About Rango</a><br/>
