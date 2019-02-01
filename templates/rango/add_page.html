@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<hmtl>
-	<head>
-		<title> Rango </title>
-	</head>
+{% extends 'rango/base.html' %}
 
-	<body>
-
+{% block body_block %}
 		{%  if category %}
 		<h1> Add Page to {{category.name}}</h1>
 		<div>
@@ -27,5 +22,4 @@
 
 		{% else %} The specified category does not exist!
 		{%endif%}
-	</body>
-</hmtl>
+{% endblock %}

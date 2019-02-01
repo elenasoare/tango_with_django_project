@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<hmtl>
-	<head>
-		<title> Rango </title>
-	</head>
+{% extends 'rango/base.html' %}
 
-	<body>
+{% block body_block %}
 		<h1> Add Category</h1>
 		<div>
-			<form id = "category_form" method = "post" action="/rango/add_category/">
+			<form id = "category_form" method = "post" action = "/rango/add_category/">
 				{% csrf_token %}
 				{% for hidden in form.hidden_fields %}
 					{{hidden}}
@@ -24,5 +20,4 @@
 
 			</form>
 		</div>
-	</body>
-</hmtl>
+{% endblock %}
