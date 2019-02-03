@@ -2,7 +2,7 @@
 
 {% block body_block %}
 		{%  if category %}
-		<h1> Add Page to {{category.name}}</h1>
+		<h1>Add Page to {{category.name}}</h1>
 		<div>
 			<form id = "page_form" method = "post" action="/rango/category/{{category.slug}}/add_page/">
 				{% csrf_token %}
@@ -16,10 +16,10 @@
 					{{field}}
 				{% endfor %}
 
-				<input type = "submit" name = "submit" value = "Create Page" />
+				<input type = "submit" name = "submit" value = "Add Page" />
 			</form>
 		</div>
 
-		{% else %} The specified category does not exist!
+		{% else %}The specified category does not exist!
 		{%endif%}
 {% endblock %}
